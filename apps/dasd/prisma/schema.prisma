@@ -1,0 +1,38 @@
+datasource postgres {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  firstName String?
+  lastName String? @dsadas   dsa
+  username  String   @unique
+  password  String
+  roles     Json
+  @@fsdf   fdsf
+
+  @@unique([unique_1(sort: Desc), unique_2])
+  @@unique([unique_1(sort: Desc), unique_2])
+}
+
+model Ddd {
+  id String @id @default(cuid())
+  createdAt EnumDddCreatedAt @dasd   fsdfbvcb   fsdf
+  updatedAt DateTime @updatedAt @fsdf  fsd   sss
+  dadasd String? @dsadasdasd dsad dsa dsadasdasd dsad dsa
+  dsad Float? @dasd dsaddsa  dsafds fdsf    dsada  dasdas
+
+  @@unique([unique_1(sort: Desc), unique_2])
+}
+
+enum EnumDddCreatedAt {
+  Vcxbc
+  Nbvn
+}
